@@ -3,12 +3,24 @@ import {Box, Button, MenuItem, TextField} from "@mui/material";
 
 
 function Member(props) {
-    // id ={props.id}
-    return <div >
+    const [memberName, setMemberName] = useState();
+    const [memberProportion, setMemberProportion] = useState();
+
+    function handleNameChange(event) {
+        setMemberName(event.target.value);
+    }
+
+
+    function handleTaxFreeChange(event) {
+        console.log(event.target.value);
+        setMemberProportion(event.target.value);
+    }
+
+    return <div id ={props.id}>
         <Box sx={{ display: 'inline-flex' }} >
             <b> {props.id} </b>
-            <TextField id="member-name" label="Member Name" variant="standard" required/>
-            <TextField id="proportion" label="Tax Free Proportion" variant="standard" required/>
+            <TextField id="member-name" label="Member Name" variant="standard" required onChange={handleNameChange}/>
+            <TextField id="proportion" label="Tax Free Proportion" variant="standard" required type="number" onChange={handleTaxFreeChange}/>
         </Box>
     </div>;
 }
@@ -16,6 +28,8 @@ const Fund = () => {
 
     const [fundName, setFundName] = useState();
     const [membersList, setMembersList] = useState([])
+    const [total, setTotal] = useState(membersList);
+
     const taxRates = [
         {
             value: 0,
@@ -32,7 +46,7 @@ const Fund = () => {
     ]
 
     const addMember = () => {
-        setMembersList(membersList.concat(<Member/>))
+        setMembersList([...membersList, <Member id={membersList.length + 1}/>])
     };
 
     const memberItems = membersList.map((member) =>
