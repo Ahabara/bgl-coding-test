@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/bgl-coding-test/static/css/main.bd85ef3a.css",
+    "main.js": "/bgl-coding-test/static/js/main.1eae0965.js",
+    "index.html": "/bgl-coding-test/index.html",
+    "main.bd85ef3a.css.map": "/bgl-coding-test/static/css/main.bd85ef3a.css.map",
+    "main.1eae0965.js.map": "/bgl-coding-test/static/js/main.1eae0965.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bd85ef3a.css",
+    "static/js/main.1eae0965.js"
+  ]
+}
