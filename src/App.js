@@ -1,11 +1,11 @@
 import './App.css';
-import Fund from "./Fund";
+import Form from "./Form";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Fund/>
+        <Form/>
       </header>
     </div>
   );
